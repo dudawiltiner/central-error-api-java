@@ -1,35 +1,27 @@
 package api.centralerrorapijava.user.model;
 
-import api.centralerrorapijava.CentralErrorApiJavaApplication;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.util.Arrays;
 import java.util.Collection;
 
 @Entity(name = "users")
-//@Data
-//@AllArgsConstructor
-//@NoArgsConstructor
-//@Inheritance(strategy = InheritanceType.JOINED)
-//@EntityListeners(CentralErrorApiJavaApplication.class)
 public class User implements UserDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Email
-    private String login;
+    @NotNull
+    private String email;
 
     @NotNull
+    @NotBlank
+    @Size(min = 6, max = 8)
     private String password;
 
 
@@ -45,7 +37,7 @@ public class User implements UserDetails{
 
     @Override
     public String getUsername() {
-        return this.login;
+        return this.email;
     }
 
     @Override
@@ -66,5 +58,13 @@ public class User implements UserDetails{
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

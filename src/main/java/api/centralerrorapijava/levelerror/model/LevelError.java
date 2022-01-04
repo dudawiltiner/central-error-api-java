@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 
-@Entity(name = "levelerros")
+@Entity(name = "levels")
 public class LevelError {
     @Id
     private Long id;

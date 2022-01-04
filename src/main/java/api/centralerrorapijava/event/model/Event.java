@@ -1,10 +1,5 @@
 package api.centralerrorapijava.event.model;
 
-import api.centralerrorapijava.CentralErrorApiJavaApplication;
-import api.centralerrorapijava.levelerror.model.LevelError;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -17,14 +12,18 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @Min(1)
+    @Max(3)
     private Long levelId;
 
     @Column(name = "event_description")
     @NotNull
+    @NotBlank
     private String eventDescription;
 
     @Column(name = "event_log")
     @NotNull
+    @NotBlank
     private String eventLog;
 
     @NotNull
