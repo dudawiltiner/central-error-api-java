@@ -16,7 +16,7 @@ Esse desafio foi proposto pela [Trybe](https://www.betrybe.com/) para a finaliza
 ## Sumário
 
 - [Contexto do *Case*](#contexto-do-case)
-- - [Premissas](#premissas)
+  - [Premissas](#premissas)
   - [Requisitos técnicos](#requisitos-técnicos)
 - [Como rodar aplicação?](#)
   -[Clonando o Repositório](#)
@@ -58,9 +58,12 @@ A Api é composta por quatro rotas(**events, levels, users e auth**). Todas com 
 
 Para entender melhor abaixo está uma imagem da Diagrama ER(Entidade Relacionamento).
 
+<div align="center">
+  <img src="./src/public/diagrama.png" margin="16px" width="600" alt="diagrama ER"/>
+</div>
 
-
-Logo abaixo para cada rota da API é feita uma tabela explicando. Porém, a documentação de todas as rotas e muito mais como usa-las você pode encontrar, após incializar aplicação, através da rota: ´´´/swagger-ui.html´´´ carregada no seu próprio browser.
+###
+Logo abaixo, para cada rota da API foi feita uma tabela explicando. Porém, a documentação de todas as rotas e muito mais como usa-las você pode encontrar, após incializar aplicação, através da rota: ```/swagger-ui.html``` carregada no seu próprio browser.
 
 ### Auth
 
@@ -89,6 +92,9 @@ Logo abaixo para cada rota da API é feita uma tabela explicando. Porém, a docu
 |   GET  |        /events/byLevel/{levelName}       |    Rota para filtrar a lista de eventos pelo nome.    |                                                                                                              Deve receber como um parâmetro de pasta o nome do nível do erro(ex: info).                                                                                                              | Retorna uma lista/array filtrada pelo nível do erro. |
 |   GET  |       /events/byQuantity/{quantity}      | Rota para filtrar a lista de eventos pela quantidade. |                                                                                                          Deve receber como um parâmetro de pasta a quantidade de erros de um nível(ex: 10).                                                                                                          |   Retorna uma lista/array filtrada pela quantidade.  |
 |   GET  |         /events/byOrigin/{origin}        |   Rota para filtrar a lista de eventos pela origem.   |                                                                                                              Deve receber como um parâmetro de pasta a origem do evento(ex:  sistema1).                                                                                                              |     Retorna uma lista/array filtrada pela origem.    |
+
+Em todas as rotas de método GET você pode aplicar paginação e ordenação para todos os campus, menos a quantidade e o nível de cada erro. Ex: ```/rota?page=0&size=3&sort=origin```.
+
 ### Levels
 
 
