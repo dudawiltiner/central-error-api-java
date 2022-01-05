@@ -1,4 +1,4 @@
-# Desafio Ebytr - *To Do List*
+# Desafio Final da Aceleração Java
 
 ## Boas vindas ao repositório do Projeto - Central de Erros Api Java
 
@@ -16,12 +16,12 @@ Esse desafio foi proposto pela [Trybe](https://www.betrybe.com/) para a finaliza
 ## Sumário
 
 - [Contexto do *Case*](#contexto-do-case)
-- - [Premissas](#funcionalidades)
+- - [Premissas](#premissas)
   - [Requisitos técnicos](#requisitos-técnicos)
 - [Como rodar aplicação?](#)
   -[Clonando o Repositório](#)
   -[Usando o link do deploy da API](#)
-- [API](#entregáveis)
+- [API](#api)
   - [Auth](#auth)
   - [Users](#users)
   - [Events](#events)
@@ -60,7 +60,7 @@ Para entender melhor abaixo está uma imagem da Diagrama ER(Entidade Relacioname
 
 
 
-Logo abaixo para cada rota da API é feita uma tabela explicando.
+Logo abaixo para cada rota da API é feita uma tabela explicando. Porém, a documentação de todas as rotas e muito mais como usa-las você pode encontrar, após incializar aplicação, através da rota: ´´´/swagger-ui.html´´´ carregada no seu próprio browser.
 
 ### Auth
 
@@ -70,7 +70,7 @@ Logo abaixo para cada rota da API é feita uma tabela explicando.
 |  POST  | /oauth/token | Rota para verificar o sistema e autenticar o usuário. | Devem ser colocadas as credenciais que estão no arquivo /src/main/resources/application.properties e para gerar o token, colocar o login e senha do usuário cadastro no banco de dados.  | Retorna um json com o "acess-token"(token de acesso) |
 
 
-### User
+### Users
 
 
 | MÉTODO |  ROTA  |              DESCRIÇÃO              |             REQUISIÇÃO(VALUES)             |               RESPOSTA              |
