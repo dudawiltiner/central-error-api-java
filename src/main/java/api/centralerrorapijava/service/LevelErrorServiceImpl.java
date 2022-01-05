@@ -1,8 +1,8 @@
-package api.centralerrorapijava.levelerror.service;
+package api.centralerrorapijava.service;
 
 
-import api.centralerrorapijava.levelerror.model.LevelError;
-import api.centralerrorapijava.levelerror.repository.LevelErrorRepository;
+import api.centralerrorapijava.model.LevelError;
+import api.centralerrorapijava.repository.LevelErrorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

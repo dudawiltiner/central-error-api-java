@@ -1,7 +1,6 @@
-package api.centralerrorapijava.levelerror.repository;
+package api.centralerrorapijava.repository;
 
-import api.centralerrorapijava.levelerror.model.LevelError;
-import api.centralerrorapijava.user.model.User;
+import api.centralerrorapijava.model.LevelError;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

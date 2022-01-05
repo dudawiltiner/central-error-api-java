@@ -1,6 +1,6 @@
-package api.centralerrorapijava.user.repository;
+package api.centralerrorapijava.repository;
 
-import api.centralerrorapijava.user.model.User;
+import api.centralerrorapijava.model.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Long>{

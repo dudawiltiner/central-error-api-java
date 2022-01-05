@@ -1,15 +1,13 @@
-package api.centralerrorapijava.event.service;
+package api.centralerrorapijava.service;
 
-import api.centralerrorapijava.event.model.Event;
-import api.centralerrorapijava.event.repository.EventRepository;
-import api.centralerrorapijava.levelerror.model.LevelError;
-import api.centralerrorapijava.levelerror.repository.LevelErrorRepository;
+import api.centralerrorapijava.model.Event;
+import api.centralerrorapijava.repository.EventRepository;
+import api.centralerrorapijava.model.LevelError;
+import api.centralerrorapijava.repository.LevelErrorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,6 +1,6 @@
-package api.centralerrorapijava.event.model;
+package api.centralerrorapijava.model;
 
-import api.centralerrorapijava.levelerror.model.LevelError;
+import api.centralerrorapijava.model.LevelError;
 
 public class EventWithOutLog {
     private Long id;

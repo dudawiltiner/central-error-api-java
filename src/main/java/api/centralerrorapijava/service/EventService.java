@@ -1,11 +1,8 @@
-package api.centralerrorapijava.event.service;
+package api.centralerrorapijava.service;
 
-import api.centralerrorapijava.event.model.Event;
+import api.centralerrorapijava.model.Event;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 

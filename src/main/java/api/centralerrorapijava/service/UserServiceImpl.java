@@ -1,7 +1,7 @@
-package api.centralerrorapijava.user.service;
+package api.centralerrorapijava.service;
 
-import api.centralerrorapijava.user.model.User;
-import api.centralerrorapijava.user.repository.UserRepository;
+import api.centralerrorapijava.model.User;
+import api.centralerrorapijava.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

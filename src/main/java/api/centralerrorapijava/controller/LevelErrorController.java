@@ -1,11 +1,8 @@
-package api.centralerrorapijava.levelerror.controller;
+package api.centralerrorapijava.controller;
 
-import api.centralerrorapijava.levelerror.model.LevelError;
-import api.centralerrorapijava.levelerror.service.LevelErrorServiceImpl;
-import api.centralerrorapijava.user.model.User;
+import api.centralerrorapijava.model.LevelError;
+import api.centralerrorapijava.service.LevelErrorServiceImpl;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

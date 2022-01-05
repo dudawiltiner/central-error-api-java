@@ -1,7 +1,6 @@
-package api.centralerrorapijava.event.model;
+package api.centralerrorapijava.model;
 
-import api.centralerrorapijava.levelerror.model.LevelError;
-import org.springframework.format.annotation.DateTimeFormat;
+import api.centralerrorapijava.model.LevelError;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -31,6 +30,7 @@ public class Event {
 
     @NotNull
     @Column(name = "event_date")
+//    Não coloquei no formato de date pois com string fica melhor para as buscas
     private String eventDate;
 
     public Long getId() {

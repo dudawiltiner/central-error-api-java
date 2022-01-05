@@ -18,7 +18,7 @@ public class SwaggerConfig {
     public Docket apis() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("api.centralerrorapijava"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo())
@@ -28,7 +28,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfo(
                 "Error Centre API Java",
-                "In modern projects it is increasingly common to use architectures based on services or microservices. In these complex environments, errors can arise in different layers of the application (backend, frontend, mobile, desktop) and even in different services. Therefore, it is very important for developers to be able to centralize all error logs in one place, from which they can monitor and make better decisions. In this project I implement a Rest API to centralize application error logs.",
+                "In modern projects it is increasingly common to use architectures based on services or microservices. In these complex environments, errors can arise in different layers of the application (backend, frontend, mobile, desktop) and even in different services. Therefore, it is very important for developers to be able to centralize all error logs in one place, from which they can monitor and make better decisions. In this project we implement a Rest API to centralize application error logs.",
                 "1.0",
                 "Termos de serviço",
                 null,

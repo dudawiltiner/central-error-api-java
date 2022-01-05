@@ -1,4 +1,4 @@
-package api.centralerrorapijava.user.model;
+package api.centralerrorapijava.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

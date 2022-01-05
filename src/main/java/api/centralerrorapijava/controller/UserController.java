@@ -1,7 +1,7 @@
-package api.centralerrorapijava.user.controller;
+package api.centralerrorapijava.controller;
 
-import api.centralerrorapijava.user.model.User;
-import api.centralerrorapijava.user.service.UserServiceImpl;
+import api.centralerrorapijava.model.User;
+import api.centralerrorapijava.service.UserServiceImpl;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -26,6 +26,6 @@ public class UserController {
         @ApiResponses(value = {@ApiResponse(code = 201, message = "A new user Created")})
         public ResponseEntity<String> create(@Valid @RequestBody User user) {
                 this.userService.save(user);
-            return new ResponseEntity<>("A new user Created", HttpStatus.CREATED);
+            return new ResponseEntity<>("sucess - A new user Created", HttpStatus.CREATED);
         }
 }

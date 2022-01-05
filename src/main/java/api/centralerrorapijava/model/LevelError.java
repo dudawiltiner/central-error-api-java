@@ -1,6 +1,4 @@
-package api.centralerrorapijava.levelerror.model;
-
-import api.centralerrorapijava.event.model.Event;
+package api.centralerrorapijava.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
