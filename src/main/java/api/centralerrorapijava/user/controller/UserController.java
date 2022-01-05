@@ -24,7 +24,8 @@ public class UserController {
         @PostMapping
         @ApiOperation("Create new user")
         @ApiResponses(value = {@ApiResponse(code = 201, message = "A new user Created")})
-        public ResponseEntity<User> create(@Valid @RequestBody User user) {
-            return new ResponseEntity<User>(this.userService.save(user), HttpStatus.CREATED);
+        public ResponseEntity<String> create(@Valid @RequestBody User user) {
+                this.userService.save(user);
+            return new ResponseEntity<>("A new user Created", HttpStatus.CREATED);
         }
 }

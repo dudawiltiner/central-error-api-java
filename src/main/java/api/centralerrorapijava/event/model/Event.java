@@ -1,5 +1,6 @@
 package api.centralerrorapijava.event.model;
 
+import api.centralerrorapijava.levelerror.model.LevelError;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -7,14 +8,13 @@ import javax.validation.constraints.*;
 
 @Entity(name = "events")
 public class Event {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Min(1)
-    @Max(3)
-    private Long levelId;
+    @ManyToOne()
+    @JoinColumn(name="level_id")
+    private LevelError level;
 
     @Column(name = "event_description")
     @NotNull
@@ -29,7 +29,6 @@ public class Event {
     @NotNull
     private String origin;
 
-    @DateTimeFormat
     @NotNull
     @Column(name = "event_date")
     private String eventDate;
@@ -40,14 +39,6 @@ public class Event {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getLevelId() {
-        return levelId;
-    }
-
-    public void setLevelId(Long levelId) {
-        this.levelId = levelId;
     }
 
     public String getEventDescription() {
@@ -74,11 +65,19 @@ public class Event {
         this.origin = origin;
     }
 
+    public void setEventDate(String eventDate) {
+        this.eventDate = eventDate;
+    }
+
     public String getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(String eventDate) {
-        this.eventDate = eventDate;
+    public LevelError getLevel() {
+        return level;
+    }
+
+    public void setLevel(LevelError level) {
+        this.level = level;
     }
 }

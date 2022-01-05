@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,7 +23,7 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public Event save(Event event) {
-        Long id = event.getId();
+        Long id = event.getLevel().getId();
         LevelError levelError = this.levelErrorRepository.findById(id).orElse(null);
         if(levelError != null) {
             levelError.setQuantity(levelError.getQuantity() + 1);
@@ -57,7 +58,7 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public List<Event> findByEventDate(DateFormat eventDate, Pageable pageable) {
+    public List<Event> findByEventDate(String eventDate, Pageable pageable) {
         return this.eventRepository.findByEventDate(eventDate, pageable).getContent();
     }
 

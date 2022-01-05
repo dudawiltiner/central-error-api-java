@@ -5,6 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +17,6 @@ public interface EventService {
     List<Event> findByLevelName(String levelName, Pageable pageable);
     List<Event> findByEventDescription(String eventDescription, Pageable pageable);
     List<Event> findByOrigin(String origin, Pageable pageable);
-    List<Event> findByEventDate(DateFormat eventDate, Pageable pageable);
+    List<Event> findByEventDate(String eventDate, Pageable pageable);
     List<Event> findByQuantity(Integer quantity, Pageable pageable);
 }

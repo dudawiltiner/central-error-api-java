@@ -1,6 +1,7 @@
 package api.centralerrorapijava.event.controller;
 
 import api.centralerrorapijava.event.model.Event;
+import api.centralerrorapijava.event.model.EventWithOutLog;
 import api.centralerrorapijava.event.service.EventService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -24,44 +27,67 @@ public class EventController {
     @PostMapping
     @ApiOperation("Save one more error event")
     @ApiResponses(value = {@ApiResponse(code = 201, message = "A new error event saved")})
-    public ResponseEntity<Event> save(@Valid @RequestBody Event event) {
-        return new ResponseEntity<>(this.eventService.save(event), HttpStatus.CREATED);
+    public ResponseEntity<String> save(@Valid @RequestBody Event event) {
+        this.eventService.save(event);
+        return new ResponseEntity<>("A new error event saved", HttpStatus.CREATED);
     }
 
     @GetMapping
     @ApiOperation("List all the events")
     @ApiResponses(value = {@ApiResponse(code = 200, message = "All events founded")})
-    public ResponseEntity<List<Event>> findAll(Pageable pageable) {
-        return new ResponseEntity<>(this.eventService.findAll(pageable), HttpStatus.OK);
+    public ResponseEntity<List<EventWithOutLog>> findAll(Pageable pageable) {
+        List<EventWithOutLog>  list = toListEventsWithOutLog(this.eventService.findAll(pageable));
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
+    @ApiOperation("Show one event by id")
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Event founded")})
     public ResponseEntity<Event> findById(@PathVariable("id") Long id) {
         return new ResponseEntity<Event>(this.eventService.findById(id).orElse(null), HttpStatus.OK);
     }
 
-    @GetMapping("/byLevelName/{levelName}")
+    @GetMapping("/byLevel/{levelName}")
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Events founded")})
-    public ResponseEntity<List<Event>> findById(@PathVariable("levelName") String levelName, Pageable pageable) {
-        return new ResponseEntity<>(this.eventService.findByLevelName(levelName, pageable), HttpStatus.OK);
+    public ResponseEntity<List<EventWithOutLog>> findById(@PathVariable("levelName") String levelName, Pageable pageable) {
+        List<EventWithOutLog>  list = toListEventsWithOutLog(this.eventService.findByLevelName(levelName, pageable));
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
-    @GetMapping("/byEventDescription/{eventDescription}")
+    @GetMapping("/byDescription/{eventDescription}")
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Events founded")})
-    public ResponseEntity<List<Event>> findByEventDescription(@PathVariable("eventDescription") String eventDescription, Pageable pageable) {
-        return new ResponseEntity<>(this.eventService.findByEventDescription(eventDescription, pageable), HttpStatus.OK);
+    public ResponseEntity<List<EventWithOutLog>> findByEventDescription(@PathVariable("eventDescription") String eventDescription, Pageable pageable) {
+        List<EventWithOutLog>  list = toListEventsWithOutLog(this.eventService.findByEventDescription(eventDescription, pageable));
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @GetMapping("/byOrigin/{origin}")
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Events founded")})
-    public ResponseEntity<List<Event>> findByOrigin(@PathVariable("origin") String origin, Pageable pageable) {
-        return new ResponseEntity<>(this.eventService.findByEventDescription(origin, pageable), HttpStatus.OK);
+    public ResponseEntity<List<EventWithOutLog>> findByOrigin(@PathVariable("origin") String origin, Pageable pageable) {
+        List<EventWithOutLog>  list = toListEventsWithOutLog(this.eventService.findByOrigin(origin, pageable));
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @GetMapping("/byQuantity/{quantity}")
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Events founded")})
-    public ResponseEntity<List<Event>> findByQuantity(@PathVariable("quantity") String quantity, Pageable pageable) {
-        return new ResponseEntity<>(this.eventService.findByEventDescription(quantity, pageable), HttpStatus.OK);
+    public ResponseEntity<List<EventWithOutLog>> findByQuantity(@PathVariable("quantity") Integer quantity, Pageable pageable) {
+        List<EventWithOutLog>  list = toListEventsWithOutLog(this.eventService.findByQuantity(quantity, pageable));
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+    @GetMapping("/byDate/{eventDate}")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "Events founded")})
+    public ResponseEntity<List<EventWithOutLog>> findByEventDate(@PathVariable("eventDate") String eventDate, Pageable pageable) {
+        List<EventWithOutLog>  list = toListEventsWithOutLog(this.eventService.findByEventDate(eventDate, pageable));
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+    public List<EventWithOutLog> toListEventsWithOutLog(List<Event> events) {
+        List<EventWithOutLog> newList = new ArrayList<>();
+        for (Event item : events) {
+            newList.add(new EventWithOutLog(item.getId(), item.getLevel(), item.getEventDescription(), item.getOrigin(), item.getEventDate()));
+        }
+
+        return newList;
     }
 }

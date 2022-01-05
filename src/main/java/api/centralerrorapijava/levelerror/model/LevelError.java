@@ -1,12 +1,16 @@
 package api.centralerrorapijava.levelerror.model;
 
+import api.centralerrorapijava.event.model.Event;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
+import java.util.List;
 
 @Entity(name = "levels")
 public class LevelError {
     @Id
+    @Column(name = "level_id")
     private Long id;
 
     @Column(name = "level_name")
@@ -16,6 +20,9 @@ public class LevelError {
     @NotNull
     @PositiveOrZero
     private Integer quantity;
+
+    @OneToMany(mappedBy="level")
+    private List<Event> events;
 
     public Long getId() {
         return id;
