@@ -40,6 +40,7 @@ public class EventController {
     @ApiResponses(value = {
             @ApiResponse(code = 500, message = "Internal Error Server"),
             @ApiResponse(code = 401, message = "Unauthorized. Generate a token"),
+            @ApiResponse(code = 404, message = "Not Found. Events not found"),
             @ApiResponse(code = 200, message = "All events founded")
     })
     public ResponseEntity<List<EventWithOutLog>> findAll(Pageable pageable) {

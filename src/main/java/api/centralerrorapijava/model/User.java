@@ -12,7 +12,7 @@ import java.util.Collection;
 @Entity(name = "users")
 public class User implements UserDetails{
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Email
