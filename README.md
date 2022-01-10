@@ -2,7 +2,7 @@
 
 ## Boas vindas ao repositório do Projeto - Central de Erros Api Java
 
-Esse desafio foi proposto pela [Trybe](https://www.betrybe.com/) para a finalização na aceleração da Codenation, em que foram requisitadas habilidades necessáiras para desenvolver um projeto **Back-End** em Java. O resultado final é uma API para **gerenciar todos os erros** salvos num único banco de dados **SQL** através de uma **API RESTFull**.
+Esse desafio foi proposto pela [Trybe](https://www.betrybe.com/) para a finalização da aceleração da Codenation, em que foram requisitadas habilidades necessáiras para desenvolver um projeto **Back-End** em Java. O resultado final é uma API para **gerenciar todos os erros** salvos num único banco de dados **SQL** através de uma **API RESTFull**.
 
 ### As ferramentas principais utilizadas foram:
 
@@ -54,9 +54,9 @@ Abaixo estão as premissas e os requisitos técnicos que a solução deve possui
 
 ## API
 
-A Api é composta por quatro rotas(**events, levels, users e auth**). Todas com suas respectivas consultas as tabelas no banco de dados. Um arquivo sql na pasta src/main/resources é carregado quando a aplicação é incializada populando o banco de dados na tabela User para se ter um usário para a autenticação e também popular a tabela Levels, contendo todos os níveis de erros e registrando cada quantidade, ela vai ter um relacionamento com a tabela Events para identificação nos níveis de erros e suas pespectiavs quantidades para cada evento buscado nas requisições.
+A Api é composta por quatro rotas(**events, levels, users e auth**). Todas com suas respectivas consultas as tabelas no banco de dados. Um arquivo sql na pasta src/main/resources é carregado quando a aplicação é incializada populando o banco de dados na tabela User para se ter um usário para a autenticação e também popular a tabela Levels, contendo todos os níveis de erros e registrando cada quantidade, ela vai ter um relacionamento com a tabela Events para identificação dos níveis de erros e suas pespectiavs quantidades para cada evento buscado nas requisições.
 
-Para entender melhor abaixo está uma imagem da Diagrama ER(Entidade Relacionamento).
+Para entender melhor abaixo está uma imagem do Diagrama ER(Entidade Relacionamento).
 
 <div align="center">
   <img src="./src/public/diagrama.png" margin="16px" width="600" alt="diagrama ER"/>
