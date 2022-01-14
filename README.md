@@ -65,7 +65,7 @@ Após cada um dos passos a seguir, haverá um exemplo do comando a ser digitado 
 
 2. Entre no diretório que acabou de criar e depois clone o projeto:
 ```javascript
-  cd api-java
+  cd central-error-api-java
   git clone https://github.com/dudawiltiner/desafio-backend-ebytr.git
 ```
 
