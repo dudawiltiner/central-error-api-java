@@ -18,9 +18,9 @@ Esse desafio foi proposto pela [Trybe](https://www.betrybe.com/) para a finaliza
 - [Contexto do *Case*](#contexto-do-case)
   - [Premissas](#premissas)
   - [Requisitos técnicos](#requisitos-técnicos)
-- [Como rodar aplicação?](#)
-  -[Clonando o Repositório](#)
-  -[Usando o link do deploy da API](#)
+- [Como rodar a aplicação](#como-rodar-a-aplicação)
+  - [Clonando o Repositório](#clonando-o-repositório)
+  - [Usando o link do deploy da API](#usando-o-link-do-deploy-da-api)
 - [API](#api)
   - [Auth](#auth)
   - [Users](#users)
@@ -52,9 +52,9 @@ Abaixo estão as premissas e os requisitos técnicos que a solução deve possui
 - [x] A consulta de listagem **não deve retornar os LOGs** dos Eventos;
 - [x] Deve permitir a busca de um evento por um ID, dessa maneira exibindo o LOG desse evento em específico;
 
-## Como rodar aplicação?
+## Como rodar a aplicação
 
-### Clone do repositório
+### Clonando o repositório
 
 Após cada um dos passos a seguir, haverá um exemplo do comando a ser digitado para fazer o que está sendo pedido, caso tenha dificuldades e o exemplo não seja suficiente, não hesite em me contatar em _eduardawiltiner@gmail.com_.
 
@@ -66,43 +66,47 @@ Após cada um dos passos a seguir, haverá um exemplo do comando a ser digitado 
 2. Entre no diretório que acabou de criar e depois clone o projeto:
 ```javascript
   cd central-error-api-java
-  git clone https://github.com/dudawiltiner/desafio-backend-ebytr.git
+  git clone https://github.com/dudawiltiner/central-error-api-java.git
 ```
 
-### Instalação das dependências
+### Rodando a aplicação pelo IntelliJ
 
-3. Entre no diretório criado após a clonagem do repositório. No caso de uso do VSC, digite o comando **code .** na raiz do diretório clonado.
+3. Entre no diretório criado após a clonagem do repositório. No caso de uso do IntelliJ, rodea aplicação no arquivo, na pasta Main:
 ```javascript
-  cd desafio-backend-ebytr
+  CentralErrorApiJavaApplication
 ```
 
-4. Installe todas as dependências, usando o CLI **npm**.
+### Rodando a aplicação pelo terminal usando Maven
+
+4. Você pode usar o Maven instalado para rodar aplicação, digitando o seguinte comando:
 ```javascript
-  npm install
-```
-### Debug da aplicação
-
-5. Abra no ambiente de desenvolvimento de sua preferência.
-```javascript
-  code .
+  mvn exec:java -Dexec.mainClass="api.centralerrorapijava.CentralErrorApiJavaApplication"
 ```
 
-4. Rode a aplicação com o node.js, usando o CLI **npm**.
-```javascript
-  npm run debug
-```
+### Usando a API
 
-### Realizar testes na aplicação
-
-5. Rode o teste da aplicação com o node.js, usando o CLI **npm**.
-```javascript
-  npm test
-```
-Ou se preferir rodar um único arquivo de teste:
+5. Você pode usar a API pelo Postman usando o seu localhost na porta 8080:
 
 ```javascript
-  NAME=<arquivodeteste> npm test
+  http://localhost:8080/{rota}
 ```
+
+Os verbos e cada rota podem ser consultados nessa secção do repositório: [API](#api) ou no link da documentação da API Swagger: ```https://api-error-java.herokuapp.com/swagger-ui.html```.
+
+### Realizar testes na aplicação no IntelliJ
+
+6. Vá até a pasta de testes e clique nos arquivo de testes. Agora você pode rodar.
+```javascript
+  EventServiceImplTest
+```
+Ou :
+
+```javascript
+  LevelErrorImplTest
+```
+### Usando o link do deploy da API
+
+7. Você pode usar a API que já está no ar, hospedada no Heroku. Porém você precisa das credenciais. Sugiro apenas utilizar a API que está no ar para consultar a documentação através do link: ```https://api-error-java.herokuapp.com/swagger-ui.html```.
 
 ## API
 
@@ -115,7 +119,7 @@ Para entender melhor abaixo está uma imagem do Diagrama ER(Entidade Relacioname
 </div>
 
 ###
-Logo abaixo, para cada rota da API foi feita uma tabela explicando. Porém, a documentação de todas as rotas e muito mais como usa-las você pode encontrar, após incializar aplicação, através da rota: ```/swagger-ui.html``` carregada no seu próprio browser.
+Logo abaixo, para cada rota da API foi feita uma tabela explicando. Porém, a documentação de todas as rotas e muito mais como usa-las você pode encontrar, após incializar aplicação, através da rota: ```/swagger-ui.html``` carregada no seu próprio browser ou usando a API hospedada no Heroku: ```https://api-error-java.herokuapp.com/swagger-ui.html```.
 
 ### Auth
 
