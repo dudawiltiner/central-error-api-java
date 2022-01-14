@@ -52,6 +52,58 @@ Abaixo estão as premissas e os requisitos técnicos que a solução deve possui
 - [x] A consulta de listagem **não deve retornar os LOGs** dos Eventos;
 - [x] Deve permitir a busca de um evento por um ID, dessa maneira exibindo o LOG desse evento em específico;
 
+## Como rodar aplicação?
+
+### Clone do repositório
+
+Após cada um dos passos a seguir, haverá um exemplo do comando a ser digitado para fazer o que está sendo pedido, caso tenha dificuldades e o exemplo não seja suficiente, não hesite em me contatar em _eduardawiltiner@gmail.com_.
+
+1. Abra o terminal e crie um diretório no local de sua preferência com o comando **mkdir**:
+```javascript
+  mkdir api-java
+```
+
+2. Entre no diretório que acabou de criar e depois clone o projeto:
+```javascript
+  cd api-java
+  git clone https://github.com/dudawiltiner/desafio-backend-ebytr.git
+```
+
+### Instalação das dependências
+
+3. Entre no diretório criado após a clonagem do repositório. No caso de uso do VSC, digite o comando **code .** na raiz do diretório clonado.
+```javascript
+  cd desafio-backend-ebytr
+```
+
+4. Installe todas as dependências, usando o CLI **npm**.
+```javascript
+  npm install
+```
+### Debug da aplicação
+
+5. Abra no ambiente de desenvolvimento de sua preferência.
+```javascript
+  code .
+```
+
+4. Rode a aplicação com o node.js, usando o CLI **npm**.
+```javascript
+  npm run debug
+```
+
+### Realizar testes na aplicação
+
+5. Rode o teste da aplicação com o node.js, usando o CLI **npm**.
+```javascript
+  npm test
+```
+Ou se preferir rodar um único arquivo de teste:
+
+```javascript
+  NAME=<arquivodeteste> npm test
+```
+
 ## API
 
 A Api é composta por quatro rotas(**events, levels, users e auth**). Todas com suas respectivas consultas as tabelas no banco de dados. Um arquivo sql na pasta src/main/resources é carregado quando a aplicação é incializada populando o banco de dados na tabela User para se ter um usário para a autenticação e também popular a tabela Levels, contendo todos os níveis de erros e registrando cada quantidade, ela vai ter um relacionamento com a tabela Events para identificação dos níveis de erros e suas pespectiavs quantidades para cada evento buscado nas requisições.
