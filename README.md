@@ -4,6 +4,8 @@
 
 Esse desafio foi proposto pela [Trybe](https://www.betrybe.com/) para a finalização da aceleração da Codenation, em que foram requisitadas habilidades necessáiras para desenvolver um projeto **Back-End** em Java. O resultado final é uma API para **gerenciar todos os erros** salvos num único banco de dados **SQL** através de uma **API RESTFull**.
 
+Você pode acessar o vídeo da aplicação no Youtube aqui:  e também pode acessar o respositório do front-end com código que usei para testar localmente a aplicação, bem como ver as modificações necessárias para não ser barrado com o CORS nesse teste.
+
 ### As ferramentas principais utilizadas foram:
 
 [Java](https://www.java.com/pt-BR/)<br>
