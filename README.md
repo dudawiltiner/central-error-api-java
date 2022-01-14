@@ -4,7 +4,7 @@
 
 Esse desafio foi proposto pela [Trybe](https://www.betrybe.com/) para a finalização da aceleração da Codenation, em que foram requisitadas habilidades necessáiras para desenvolver um projeto **Back-End** em Java. O resultado final é uma API para **gerenciar todos os erros** salvos num único banco de dados **SQL** através de uma **API RESTFull**.
 
-Você pode acessar o vídeo da aplicação no Youtube aqui:  e também pode acessar o respositório do front-end com código que usei para testar localmente a aplicação, bem como ver as modificações necessárias para não ser barrado com o CORS nesse teste.
+Você pode acessar o vídeo da aplicação no Youtube aqui: [PROJETO JAVA - API CENTRAL DE ERROS (VÍDEO RESUMO)](https://www.youtube.com/watch?v=Jh91a9kI5KE)  e também pode acessar o respositório do front-end com código que usei para testar localmente a utilidade da aplicação, bem como ver as modificações necessárias para não ser barrado com o CORS nesse teste aqui: [CENTRAL DE ERROS FRONT](https://github.com/dudawiltiner/central-error-front).
 
 ### As ferramentas principais utilizadas foram:
 
@@ -12,6 +12,8 @@ Você pode acessar o vídeo da aplicação no Youtube aqui:  e também pode aces
 [Intelli J IDE](https://www.jetbrains.com/idea/)<br>
 [Spring Boot](https://spring.io/projects/spring-boot)<br>
 [Swagger](https://swagger.io/docs/)<br>
+[Spring Security](https://spring.io/projects/spring-security)<br>
+[oAuth](https://swagger.io/docs/specification/authentication/oauth2/)<br>
 
 ---
 
